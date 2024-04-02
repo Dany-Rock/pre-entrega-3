@@ -1,0 +1,14 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenido %}
+ {% if cursos %}
+    <ul>  <!--listado no ordenado-->
+   {%for curso in cursos %}
+      <li>Nombre: {{curso.nombre}}</li>
+      <li>Camada: {{curso.camada}}</li>
+   {%endfor%}
+   </ul>
+ {%else %}
+    <p>No se encontraron coincidencias</p>  
+ {% endif%}
+{% endblock %}

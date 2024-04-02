@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenido %}
+ {% if alumnos %}
+    <ul>  <!--listado no ordenado-->
+   {%for alumno in alumnos %}
+      <li>Nombre del alumno: {{alumno.nombre}}</li>
+      <li>DNI: {{alumno.dni}}</li>
+      <li>Grupo:{{alumno.grupo}}</li>
+   {%endfor%}
+   </ul>
+ {%else %}
+    <p>No se encontraron coincidencias</p>  
+ {% endif%}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenido %}
+ <form action="agregar_profesor" method="POST"> <!--P-->
+    {% csrf_token %}
+    <p>Nombre de profesor:</p>
+    <input type="text" name="nombre" required>
+    <p>DNI:</p>
+    <input type="number" name="dni" required>
+    <p>Grupo:</p>
+    <input type="text" name="grupo" required>   
+    <button>Enviar</button>
+
+ </form>
+{% endblock %}

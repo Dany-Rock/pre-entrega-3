@@ -1,0 +1,42 @@
+{%extends 'padre.html'%}
+{%load static%}
+{%block contenido%}
+ <main>  <!--etiquetas semanticas. Dan formato y dicen para que se usan-->
+    <div class ="container">
+        <div class="row">
+            <div class="col-12 col-md-6">   <!--inicia imagen 1: col1 fila 1-->
+                <h5></h5>
+                <div class="card">
+                    <img src ="{% static 'AppCoder/assets/img/testimonials-1.jpg' %}"/> <!--src es source, propiedad de imagen, es la fuente de la imagen-->
+                    <div class="card-body">
+                        <h5 class="class-title">Dany</h5>
+                        <p class="card-text">Me gusto mucho el curso</p>
+                        <a class ="btn btn-danger" href="">Enviar mensaje </a>
+                    </div>
+                </div>
+                <h5></h5>
+            </div>                          <!--fin imagen 1-->
+            <div class="col-12 col-md-6">   <!--inicia imagen 2: col2 fila 1--> 
+                <h5></h5>
+                <div class="card">
+                    <img src ="{% static 'AppCoder/assets/img/testimonials-2.jpg' %}"/> <!--src es source, propiedad de imagen, es la fuente de la imagen-->
+                    <div class="card-body">
+                        <h5 class="class-title">Ernestino</h5>
+                        <p class="card-text">¡Muy entretenido todo! Recomendado para todos los que quieran incursionar en python desde cero</p>
+                        <a class ="btn btn-danger" href="">Enviar mensaje </a>
+                    </div>
+                </div>
+                <h5></h5>
+            </div>   <!--fin imagen 2-->
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6"> 
+                <img src ="{% static 'AppCoder/assets/img/testimonials-2.jpg' %}"/>
+            </div>
+            <div class="col-12 col-md-6"> 
+                <img src ="{% static 'AppCoder/assets/img/testimonials-3.jpg' %}"/>
+            </div>
+        </div>      
+    </div>
+ </main>
+{%endblock%}

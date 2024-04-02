@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenido %}
+ {% if profesores %}
+    <ul>  <!--listado no ordenado-->
+   {%for profesor in profesores %}
+      <li>Nombre del profesor: {{profesor.nombre}}</li>
+      <li>DNI: {{profesor.dni}}</li>
+      <li>Grupo:{{profesor.grupo}}</li>
+   {%endfor%}
+   </ul>
+ {%else %}
+    <p>No se encontraron coincidencias</p>  
+ {% endif%}
+{% endblock %}

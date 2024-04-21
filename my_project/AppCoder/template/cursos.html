@@ -10,6 +10,9 @@
   {% endfor %}-->
   <main class="container">
     <h1 class="text-xl-center">Cursos</h1>
+    <a href="alta_curso" class ="btn btn-outline-primary btn-sm">Nuevo curso</a>
+    <a href="buscar_curso" class ="btn btn-outline-primary btn-sm">Buscar curso</a> <!--Coincide con URL, no su name-->
+    <h1 class="text-xl-center"></h1>
     <table class="table">
         <thead>
             <tr>
@@ -24,10 +27,14 @@
                 <th scope ="row">{{n.id}}</th>
                 <td>{{n.nombre}}</td>
                 <td>{{n.camada}}</td>
+                {% if request.user.is_authenticated %}
+                <td><a href="{% url 'eliminar_curso' n.id %}" class="btn btn-outline-success">Borrar</a></td> <!--esto matchea con el name en el path!!!!!-->
+                <td><a href="{% url 'editar_curso' n.id %}" class="btn btn-outline-warning">Editar</a></td> <!--esto matchea con el URL en el path!!!!!-->
+                {% endif %}
             </tr>
             {% endfor %}
         </tbody>
     </table>
   </main>
   
-{% endblock %}
+  {% endblock %}

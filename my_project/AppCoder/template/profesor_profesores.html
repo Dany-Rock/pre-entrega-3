@@ -7,6 +7,9 @@
 
   <main class="container">
     <h1 class="text-xl-center">Profesores</h1>
+    <a href="agregar_profesor" class ="btn btn-outline-dark btn-sm">Nuevo profesor</a>
+    <a href="buscar_profesor" class ="btn btn-outline-dark btn-sm">Buscar profesor</a> <!--Poner el name de la view-->
+    <h1 class="text-xl-center"></h1>
     <table class="table">
         <thead>
             <tr>
@@ -23,6 +26,8 @@
                 <td>{{n.nombre}}</td>
                 <td>{{n.grupo}}</td>
                 <td>{{n.dni}}</td>
+                <td><a href="{% url 'eliminar_profesor' n.id %}" class="btn btn-outline-success">Borrar</a></td> <!--esto matchea con el name en el path!!!!!-->
+                <td><a href="{% url 'editar_profesor' n.id %}" class="btn btn-outline-warning">Editar</a></td> <!--esto matchea con el URL en el path!!!!!-->
             </tr>
             {% endfor %}
         </tbody>

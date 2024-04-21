@@ -7,6 +7,9 @@
 
   <main class="container">
     <h1 class="text-xl-center">Alumnos</h1>
+    <a href="agregar_alumno" class ="btn btn-outline-success btn-sm">Nuevo alumno</a>
+    <a href="buscar_alumno" class ="btn btn-outline-success btn-sm">Buscar alumno</a>
+    <h1 class="text-xl-center"></h1>
     <table class="table">
         <thead>
             <tr>
@@ -23,6 +26,8 @@
                 <td>{{n.nombre}}</td>
                 <td>{{n.grupo}}</td>
                 <td>{{n.dni}}</td>
+                <td><a href="{% url 'eliminar_alumno' n.id %}" class="btn btn-outline-success">Borrar</a></td> <!--esto matchea con el name en el path!!!!!-->
+                <td><a href="{% url 'editar_alumno' n.id %}" class="btn btn-outline-warning">Editar</a></td> <!--esto matchea con el URL en el path!!!!!-->
             </tr>
             {% endfor %}
         </tbody>

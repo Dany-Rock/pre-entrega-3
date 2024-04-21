@@ -1,0 +1,31 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenido %}
+    <h2>{{mensaje}}</h2>
+
+    <div class ="container">
+        <div class="row">
+            <div class="col-12 col-md-6">   <!--inicia imagen 1: col1 fila 1-->
+                <h5></h5>
+                <div class="card">
+                    <img src ="{% static 'AppCoder/assets/img/testimonials-1.jpg' %}"/> <!--src es source, propiedad de imagen, es la fuente de la imagen-->
+                    <div class="card-body">
+                        <h5 class="class-title">{{usuario}}</h5>
+                        <p class="card-text">Me gusto mucho el curso</p>
+                        <a class ="btn btn-success" href="">Enviar mensaje </a>
+                        <form method="post" action ="{% url 'Logout' %}">
+                            {% csrf_token %}
+                            <button type ="submit" class ="btn btn-danger">logout</button>
+                        </form>
+                        <a class ="btn btn-warning" href="{% url 'EditarPerfil' %}">Editar info </a>
+                    </div>
+                </div>
+                <h5></h5>
+            </div>  
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
